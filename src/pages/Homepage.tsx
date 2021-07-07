@@ -1,7 +1,18 @@
-import * as React from "react";
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+import { CountDownBanner } from "../components/CountDownBanner";
 
 function Homepage() {
-  return <div>Homepage</div>;
+  return (
+    <div
+      css={css`
+        width: 100%;
+      `}
+    >
+      Homepage
+      <CountDownBanner />
+    </div>
+  );
 }
 
 export default Homepage;
