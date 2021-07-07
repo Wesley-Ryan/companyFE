@@ -3,6 +3,7 @@ import { css } from "@emotion/react";
 
 import { calculateTimeLeft } from "../hooks/useTimer";
 import { Column } from "../styles/Styles";
+
 export const CountDownBanner = () => {
   const deadline = calculateTimeLeft();
 
@@ -15,13 +16,7 @@ export const CountDownBanner = () => {
         display: flex;
       `}
     >
-      <div
-        css={css`
-          display: flex;
-          flex-direction: column;
-          border: 2px solid purple;
-        `}
-      >
+      <Column>
         <p
           css={css`
             color: #ffffff;
@@ -47,7 +42,7 @@ export const CountDownBanner = () => {
         >
           days
         </p>
-      </div>
+      </Column>
 
       <Column>
         <p>{deadline?.hours}</p>
