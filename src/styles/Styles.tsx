@@ -27,4 +27,16 @@ const CountNumber = styled.p`
   margin: 0;
 `;
 
-export { Row, Column, CountText, CountNumber };
+const NavItem = styled.li`
+  height: 31px;
+  color: #000000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 31px;
+  text-align: center;
+  list-style-type: none;
+`;
+
+export { Row, Column, CountText, CountNumber, NavItem };

@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { CountDownBanner } from "../components/CountDownBanner";
-
+import Navigation from "../components/Navigation";
 function Homepage() {
   return (
     <div
@@ -11,6 +11,7 @@ function Homepage() {
     >
       Homepage
       <CountDownBanner />
+      <Navigation />
     </div>
   );
 }
