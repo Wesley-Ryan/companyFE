@@ -1,10 +1,14 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import * as React from "react";
 import { NavItem, Row } from "../styles/Styles";
 
 import CartImg from "../assets/cart.svg";
 
+import Cart from "../components/Cart";
+
 const Navigation = () => {
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
   return (
     <div
       css={css`
@@ -45,7 +49,7 @@ const Navigation = () => {
         <NavItem>CONSECTETUR</NavItem>
         <NavItem>VENIAM</NavItem>
       </ul>
-      <Row>
+      <Row onClick={() => setIsOpen((state) => !state)}>
         <img
           src={CartImg}
           alt="cart"
@@ -65,6 +69,7 @@ const Navigation = () => {
           <p className="triangle"></p>
         </Row>
       </Row>
+      {isOpen && <Cart />}
     </div>
   );
 };
