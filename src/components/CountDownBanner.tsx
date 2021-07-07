@@ -1,8 +1,9 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 
+import { useState } from "react";
 import { calculateTimeLeft } from "../hooks/useTimer";
-import { Column } from "../styles/Styles";
+import { Row, Column, CountNumber, CountText } from "../styles/Styles";
 
 export const CountDownBanner = () => {
   const deadline = calculateTimeLeft();
@@ -11,51 +12,60 @@ export const CountDownBanner = () => {
     <div
       css={css`
         width: 100%;
-        height: 44px;
-        border: 1px solid blue;
+        height: 50px;
+        background-color: #1f3162;
         display: flex;
+        justify-content: center;
+        align-items: center;
       `}
     >
-      <Column>
+      <Row
+        css={css`
+          height: 44px;
+          width: 671px;
+          justify-content: space-between;
+        `}
+      >
         <p
           css={css`
-            color: #ffffff;
-            font-family: Poppins;
-            font-size: 16px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-align: center;
-            margin: 0;
-          `}
-        >
-          {deadline?.days}
-        </p>
-        <p
-          css={css`
+            align-self: center;
+            height: 31px;
             color: rgba(255, 255, 255, 0.72);
             font-family: Poppins;
-            font-size: 12px;
+            font-size: 16px;
             letter-spacing: 0;
-            text-align: center;
-            margin: 0;
+            line-height: 31px;
           `}
         >
-          days
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit
         </p>
-      </Column>
 
-      <Column>
-        <p>{deadline?.hours}</p>
-        <p>hours</p>
-      </Column>
-      <Column>
-        <p>{deadline?.minutes}</p>
-        <p>minutes</p>
-      </Column>
-      <Column>
-        <p>{deadline?.seconds}</p>
-        <p>seconds</p>
-      </Column>
+        <Row
+          css={css`
+            width: 211px;
+            height: 44px;
+            align-items: center;
+          `}
+        >
+          <Column>
+            <CountNumber>{deadline?.days}</CountNumber>
+            <CountText>days</CountText>
+          </Column>
+
+          <Column>
+            <CountNumber>{deadline?.hours}</CountNumber>
+            <CountText>hours</CountText>
+          </Column>
+          <Column>
+            <CountNumber>{deadline?.minutes}</CountNumber>
+            <CountText>minutes</CountText>
+          </Column>
+          <Column>
+            <CountNumber>{deadline?.seconds}</CountNumber>
+            <CountText>seconds</CountText>
+          </Column>
+        </Row>
+      </Row>
     </div>
   );
 };

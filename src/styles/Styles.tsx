@@ -7,13 +7,24 @@ const Row = styled.div`
 const Column = styled.div`
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
 `;
-const GroupedCol = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
+const CountText = styled.p`
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Poppins;
+  font-size: 12px;
+  letter-spacing: 0;
+  text-align: center;
+  margin: 0 3px 0 3px;
 `;
 
-export { Row, Column, GroupedCol };
+const CountNumber = styled.p`
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 0;
+`;
+
+export { Row, Column, CountText, CountNumber };
