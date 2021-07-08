@@ -135,28 +135,21 @@ const CartContainer = styled.div`
   display: flex;
   flex-direction: column;
   overflow: scroll;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
 `;
-const CartRow = styled.p`
-  width: 100%;
+const CartItemContainer = styled.div`
   display: flex;
-  z-index: 100;
-  position: absolute;
-`;
-const CartColumn = styled.div`
-  display: flex;
-  flex-direction: column;
-  z-index: 100;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.5);
+  margin: 0 20px 0 20px;
 `;
 
 const CartImg = styled.img`
-  height: 95px;
+  height: 92px;
   width: 95px;
   border-radius: 8px;
-  margin: 52px 5px 33px 18px;
+  margin: 22px 5px 24px 0;
 `;
 const CartProductText = styled.p`
-  z-index: 100;
-
   height: 33px;
   width: 165px;
   color: #000000;
@@ -165,9 +158,11 @@ const CartProductText = styled.p`
   font-weight: 600;
   letter-spacing: 0;
   line-height: 33px;
+  margin: 23px 0 4px 0;
 `;
-const CartLink = styled.p`
-  z-index: 100;
+const CartLink = styled.button`
+  outline: none;
+  border: none;
   text-decoration: underline;
   height: 24px;
   width: 53px;
@@ -176,6 +171,7 @@ const CartLink = styled.p`
   font-size: 13px;
   letter-spacing: 0;
   line-height: 24px;
+  background: none;
 `;
 
 export {
@@ -194,8 +190,7 @@ export {
   CarouselRow,
   CartContainer,
   CartProductText,
-  CartRow,
-  CartColumn,
+  CartItemContainer,
   CartImg,
   CartLink,
 };
