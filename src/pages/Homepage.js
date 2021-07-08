@@ -14,7 +14,7 @@ import CardContainer from "../components/CardContainer";
 
 function Homepage() {
   const { setProducts, products } = useStore((state) => state);
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [items, setItems] = useState([]);
 
   const getItems = () => {

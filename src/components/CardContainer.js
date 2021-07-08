@@ -1,6 +1,6 @@
 import { Carousel } from "react-responsive-carousel";
 import Card from "./Card";
-import { Row } from "../styles/Styles";
+import { CarouselRow } from "../styles/Styles";
 import { useEffect, useState } from "react";
 
 const CardContainer = (props) => {
@@ -14,7 +14,7 @@ const CardContainer = (props) => {
   };
 
   useEffect(() => {
-    const grouped = groupOfThree(3, products);
+    const grouped = groupOfThree(4, products);
     setGroupedProducts(grouped);
   }, [products]);
   return (
@@ -22,11 +22,11 @@ const CardContainer = (props) => {
       <Carousel showThumbs={false}>
         {groupedProducts.map((prod, index) => {
           return (
-            <Row key={index}>
+            <CarouselRow key={index}>
               {prod.map((eachProduct, idx) => {
                 return <Card product={eachProduct} key={idx} />;
               })}
-            </Row>
+            </CarouselRow>
           );
         })}
       </Carousel>

@@ -1,6 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import styled from "@emotion/styled";
 
+const CarouselRow = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
 const Row = styled.div`
   display: flex;
 `;
@@ -53,6 +57,17 @@ const TopButton = styled.button`
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
 `;
 
+const CardContainer = styled.div`
+  margin-top: 101px;
+  box-sizing: border-box;
+  height: 567px;
+  width: 302px;
+  border: 1px solid #ececec;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.13);
+  position: relative;
+`;
 const CardTitle = styled.p`
   height: 33px;
   width: 165px;
@@ -105,9 +120,6 @@ const Checked = styled.img`
   height: 20px;
   margin: 4px;
 `;
-const Bold = styled.span`
-  font-weigth: bold;
-`;
 
 export {
   Row,
@@ -116,10 +128,11 @@ export {
   CountNumber,
   NavItem,
   TopButton,
+  CardContainer,
   CardText,
   CardTitle,
   CardButton,
   CardColorBox,
   Checked,
-  Bold,
+  CarouselRow,
 };
