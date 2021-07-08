@@ -19,7 +19,7 @@ function Homepage() {
       `}
     >
       <CountDownBanner />
-      <Navigation items={items} />
+      <Navigation items={items} setIsOpen={setIsOpen} />
 
       {isOpen && (
         <Row
@@ -31,7 +31,6 @@ function Homepage() {
         </Row>
       )}
       <Banner />
-      <button onClick={() => setIsOpen((state) => !state)}>CLick</button>
     </div>
   );
 }
