@@ -7,6 +7,7 @@ import { CountDownBanner } from "../components/CountDownBanner";
 import Navigation from "../components/Navigation.js";
 import Cart from "../components/Cart";
 import Banner from "../components/Banner";
+import Card from "../components/Card.js";
 
 function Homepage() {
   const [isOpen, setIsOpen] = useState(true);
@@ -31,6 +32,7 @@ function Homepage() {
         </Row>
       )}
       <Banner />
+      <Card />
     </div>
   );
 }
