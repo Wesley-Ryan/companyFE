@@ -8,7 +8,7 @@ import { useStore } from "../hooks/useStore";
 
 import { CountDownBanner } from "../components/CountDownBanner";
 import Navigation from "../components/Navigation.js";
-import Cart from "../components/Cart";
+import Cart from "../components/Cart.js";
 import Banner from "../components/Banner";
 import CardContainer from "../components/CardContainer";
 

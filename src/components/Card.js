@@ -13,10 +13,12 @@ import {
 import Arrow from "../assets/arrow.svg";
 
 import { useState } from "react";
+import { useStore } from "../hooks/useStore";
 
 const Card = (props) => {
+  const { addToCart } = useStore((state) => state);
   const { product } = props;
-  console.log("CARD", product);
+
   const colors = ["#143061", "#81396f", "#F6437D"];
   const [inCart, setInCart] = useState(false);
 
@@ -71,7 +73,7 @@ const Card = (props) => {
           </CardColorBox>
         </Row>
         <p>ID: {product?.id}</p>
-        <CardButton>Add to cart</CardButton>
+        <CardButton onClick={() => addToCart(product)}>Add to cart</CardButton>
       </Column>
     </CardContainer>
   );

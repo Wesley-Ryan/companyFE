@@ -12,7 +12,14 @@ export const useStore = create((set, get) => ({
     );
     set({ products: currentProducts });
   },
-  addToCart: (product) => set({ cart: [...get().cart, product] }),
+  addToCart: (product) => {
+    const inCart = get().cart;
+    if (inCart.includes(product)) {
+      return;
+    } else {
+      set({ cart: [...get().cart, product] });
+    }
+  },
   removeFromCart: (requestedProduct) => {
     const cart = get().cart;
     let inCart = cart.filter((product) => product.id !== requestedProduct.id);
