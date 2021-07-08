@@ -53,4 +53,56 @@ const TopButton = styled.button`
   box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
 `;
 
-export { Row, Column, CountText, CountNumber, NavItem, TopButton };
+const CardTitle = styled.p`
+  height: 33px;
+  width: 165px;
+  color: #000000;
+  font-family: Poppins;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 33px;
+  margin: 22px 115px 0 21.5px;
+`;
+const CardText = styled.p`
+  margin: 7px 25px 0px 21px;
+  height: 56px;
+  width: 255px;
+  color: #000000;
+  font-family: "Open Sans";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 24px;
+`;
+
+const CardButton = styled.button`
+  height: 16px;
+  width: 123px;
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 16px;
+  text-align: center;
+  height: 69px;
+  width: 301px;
+  border-radius: 0 0 12px 12px;
+  background-color: #000000;
+  border: none;
+  outline: none;
+  position: absolute;
+  bottom: 0;
+`;
+
+export {
+  Row,
+  Column,
+  CountText,
+  CountNumber,
+  NavItem,
+  TopButton,
+  CardText,
+  CardTitle,
+  CardButton,
+};
