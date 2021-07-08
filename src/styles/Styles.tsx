@@ -27,4 +27,30 @@ const CountNumber = styled.p`
   margin: 0;
 `;
 
-export { Row, Column, CountText, CountNumber };
+const NavItem = styled.li`
+  height: 31px;
+  color: #000000;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  line-height: 31px;
+  text-align: center;
+  list-style-type: none;
+`;
+
+const TopButton = styled.button`
+  height: 48px;
+  width: 255px;
+  border-radius: 24px;
+  background-color: #000000;
+  color: white;
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: bold;
+  border: none;
+  margin-left: 79px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+`;
+
+export { Row, Column, CountText, CountNumber, NavItem, TopButton };

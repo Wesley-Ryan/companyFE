@@ -2,7 +2,7 @@ import * as React from "react";
 import { Route, Switch } from "react-router-dom";
 
 import Login from "./pages/Login";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/Homepage.js";
 import NoMatch from "./pages/NoMatch";
 import Register from "./pages/Register";
 import "./App.css";

@@ -66,15 +66,15 @@ export const CountDownBanner = () => {
           </Column>
 
           <Column>
-            <CountNumber>{hours}</CountNumber>
+            <CountNumber>{hours <= 9 ? `0${hours}` : hours}</CountNumber>
             <CountText>hours</CountText>
           </Column>
           <Column>
-            <CountNumber>{minutes}</CountNumber>
+            <CountNumber>{minutes <= 9 ? `0${minutes}` : minutes}</CountNumber>
             <CountText>minutes</CountText>
           </Column>
           <Column>
-            <CountNumber>{seconds}</CountNumber>
+            <CountNumber>{seconds <= 9 ? `0${seconds}` : seconds}</CountNumber>
             <CountText>seconds</CountText>
           </Column>
         </Row>

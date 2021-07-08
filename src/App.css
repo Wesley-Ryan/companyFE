@@ -1,14 +1,32 @@
 .App {
-  text-align: center;
+  margin: 0 auto;
+  max-width: 1440px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 7px solid #a0a2a6;
+  margin: 0 auto;
+  margin-top: 3px;
+  align-self: center;
+}
+
+.oval {
+  height: 25px;
+  width: 25px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  border-radius: 100%;
+  background-color: #d74179;
+}
+
+.background {
+  background: url(./assets/Group.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
