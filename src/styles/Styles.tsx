@@ -132,6 +132,50 @@ const CartContainer = styled.div`
   box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.19);
   z-index: 99;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+`;
+const CartRow = styled.p`
+  width: 100%;
+  display: flex;
+  z-index: 100;
+  position: absolute;
+`;
+const CartColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+`;
+
+const CartImg = styled.img`
+  height: 95px;
+  width: 95px;
+  border-radius: 8px;
+  margin: 52px 5px 33px 18px;
+`;
+const CartProductText = styled.p`
+  z-index: 100;
+
+  height: 33px;
+  width: 165px;
+  color: #000000;
+  font-family: Poppins;
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 33px;
+`;
+const CartLink = styled.p`
+  z-index: 100;
+  text-decoration: underline;
+  height: 24px;
+  width: 53px;
+  color: #646a70;
+  font-family: "Open Sans";
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: 24px;
 `;
 
 export {
@@ -149,4 +193,9 @@ export {
   Checked,
   CarouselRow,
   CartContainer,
+  CartProductText,
+  CartRow,
+  CartColumn,
+  CartImg,
+  CartLink,
 };
