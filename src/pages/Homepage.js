@@ -9,7 +9,7 @@ import Cart from "../components/Cart";
 import Banner from "../components/Banner";
 
 function Homepage() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [items, setItems] = useState([]);
 
   return (
@@ -20,7 +20,7 @@ function Homepage() {
     >
       <CountDownBanner />
       <Navigation items={items} />
-      <Banner />
+
       {isOpen && (
         <Row
           css={css`
@@ -30,6 +30,7 @@ function Homepage() {
           <Cart />
         </Row>
       )}
+      <Banner />
       <button onClick={() => setIsOpen((state) => !state)}>CLick</button>
     </div>
   );
