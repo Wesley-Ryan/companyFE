@@ -1,15 +1,18 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+import { useState } from "react";
 import { NavItem, Row } from "../styles/Styles";
 
 import CartImg from "../assets/cart.svg";
 
 const Navigation = () => {
+  const [items, setItems] = useState([]);
+  console.log(items.length);
   return (
     <div
       css={css`
         width: 100%;
-        height: 116px;
+        height: 66px;
         background-color: #ffffff;
         font-family: Poppins;
         display: flex;
@@ -52,16 +55,38 @@ const Navigation = () => {
           src={CartImg}
           alt="cart"
           css={css`
-            height: 37px;
+            height: 30px;
+            width: 37px;
             align-self: center;
             margin-left: 100px;
+            margin-right: -8px;
           `}
         />
+        {items.length > 0 ? (
+          <div
+            className="oval"
+            css={css`
+              margin: 0;
+              padding: 0;
+            `}
+          >
+            <p
+              css={css`
+                margin: 0 auto;
+                color: white;
+                font-size: 16px;
+              `}
+            >
+              {items}
+            </p>
+          </div>
+        ) : null}
+
         <Row
           css={css`
             height: 37px;
             align-self: center;
-            margin-left: 5px;
+            margin: 0 5px 0 10px;
           `}
         >
           <p className="triangle"></p>
