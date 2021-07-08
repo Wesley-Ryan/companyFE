@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
 import { NavItem, Row } from "../styles/Styles";
-import * as React from "react";
 import CartImg from "../assets/cart.svg";
 
-const Navigation = ({ items, setIsOpen }) => {
+import { useStore } from "../hooks/useStore";
+
+const Navigation = ({ setIsOpen }) => {
+  const cart = useStore((state) => state.cart);
   return (
     <div
       css={css`
@@ -59,7 +61,7 @@ const Navigation = ({ items, setIsOpen }) => {
             margin-right: -8px;
           `}
         />
-        {items.length > 0 ? (
+        {cart.length > 0 ? (
           <div
             className="oval"
             css={css`
@@ -74,7 +76,7 @@ const Navigation = ({ items, setIsOpen }) => {
                 font-size: 16px;
               `}
             >
-              {items}
+              {cart.length}
             </p>
           </div>
         ) : null}

@@ -13,36 +13,13 @@ const CartItem = (props) => {
   const { product, removeFromCart } = props;
   return (
     <CartItemContainer>
-      <CartImg
-        src={product.url}
-        alt={product.product_name}
-        css={css`
-          height: 92px;
-          width: 95px;
-          border-radius: 8px;
-          margin: 22px 5px 24px 0;
-        `}
-      />
+      <CartImg src={product.url} alt={product.product_name} />
       <Column
         css={css`
           align-items: center;
         `}
       >
-        <CartProductText
-          css={css`
-            height: 33px;
-            width: 165px;
-            color: #000000;
-            font-family: Poppins;
-            font-size: 23px;
-            font-weight: 600;
-            letter-spacing: 0;
-            line-height: 33px;
-            margin: 23px 0 4px 0;
-          `}
-        >
-          {product.product_name}
-        </CartProductText>
+        <CartProductText>{product.product_name}</CartProductText>
         <div
           css={css`
             display: flex;
