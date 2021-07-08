@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { NavItem, Row } from "../styles/Styles";
+import { NavContainer, NavItem, Row, NavLogo, NavMenu } from "../styles/Styles";
 import CartImg from "../assets/cart.svg";
 
 import { useStore } from "../hooks/useStore";
@@ -8,46 +8,16 @@ import { useStore } from "../hooks/useStore";
 const Navigation = ({ setIsOpen }) => {
   const cart = useStore((state) => state.cart);
   return (
-    <div
-      css={css`
-        width: 100%;
-        height: 66px;
-        background-color: #ffffff;
-        font-family: Poppins;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #e6e6e7;
-      `}
-    >
-      <h2
-        css={css`
-          height: 41px;
-          width: 159px;
-          color: #000000;
-          font-size: 24px;
-          font-weight: 600;
-          letter-spacing: 0;
-          line-height: 41px;
-          align-self: center;
-        `}
-      >
-        Lorem Ipsum
-      </h2>
+    <NavContainer>
+      <NavLogo>Lorem Ipsum</NavLogo>
 
-      <ul
-        css={css`
-          display: flex;
-          justify-content: space-around;
-          width: 65%;
-          align-items: center;
-        `}
-      >
+      <NavMenu>
         <NavItem>LOREM</NavItem>
         <NavItem>IPSUM</NavItem>
         <NavItem>EXCEPTEUR</NavItem>
         <NavItem>CONSECTETUR</NavItem>
         <NavItem>VENIAM</NavItem>
-      </ul>
+      </NavMenu>
 
       <Row onClick={() => setIsOpen((state) => !state)}>
         <img
@@ -91,7 +61,7 @@ const Navigation = ({ setIsOpen }) => {
           <p className="triangle"></p>
         </Row>
       </Row>
-    </div>
+    </NavContainer>
   );
 };
 

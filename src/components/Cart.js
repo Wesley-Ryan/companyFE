@@ -10,7 +10,11 @@ const Cart = () => {
         ? cart.map((product) => {
             return (
               <>
-                <CartItem product={product} removeFromCart={removeFromCart} />
+                <CartItem
+                  product={product}
+                  removeFromCart={removeFromCart}
+                  key={product.id}
+                />
               </>
             );
           })

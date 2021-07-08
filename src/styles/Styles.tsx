@@ -30,7 +30,33 @@ const CountNumber = styled.p`
   text-align: center;
   margin: 0;
 `;
+const NavContainer = styled.div`
+  width: 100%;
+  height: 66px;
+  background-color: #ffffff;
+  font-family: Poppins;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #e6e6e7;
+`;
 
+const NavLogo = styled.h2`
+  height: 41px;
+  width: 159px;
+  color: #000000;
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 41px;
+  align-self: center;
+`;
+
+const NavMenu = styled.ul`
+  display: flex;
+  justify-content: space-around;
+  width: 65%;
+  align-items: center;
+`;
 const NavItem = styled.li`
   height: 31px;
   color: #000000;
@@ -179,6 +205,9 @@ export {
   Column,
   CountText,
   CountNumber,
+  NavContainer,
+  NavMenu,
+  NavLogo,
   NavItem,
   TopButton,
   CardContainer,
