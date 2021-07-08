@@ -13,3 +13,9 @@
   margin-top: 3px;
   align-self: center;
 }
+
+.oval {
+  height: 24px;
+  width: 24px;
+  background-color: #d74179;
+}
