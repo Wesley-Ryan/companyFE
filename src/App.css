@@ -22,3 +22,11 @@
   border-radius: 100%;
   background-color: #d74179;
 }
+
+.background {
+  background: url(./assets/Group.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}

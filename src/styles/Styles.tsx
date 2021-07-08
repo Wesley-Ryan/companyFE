@@ -39,4 +39,18 @@ const NavItem = styled.li`
   list-style-type: none;
 `;
 
-export { Row, Column, CountText, CountNumber, NavItem };
+const TopButton = styled.button`
+  height: 48px;
+  width: 255px;
+  border-radius: 24px;
+  background-color: #000000;
+  color: white;
+  font-size: 15px;
+  font-family: Poppins;
+  font-weight: bold;
+  border: none;
+  margin-left: 79px;
+  box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+`;
+
+export { Row, Column, CountText, CountNumber, NavItem, TopButton };
