@@ -95,6 +95,17 @@ const CardButton = styled.button`
   bottom: 0;
 `;
 
+const CardColorBox = styled.div`
+  height: 32px;
+  width: 33px;
+  border-radius: 5px;
+`;
+
+const Checked = styled.img`
+  height: 20px;
+  margin: 4px;
+`;
+
 export {
   Row,
   Column,
@@ -105,4 +116,6 @@ export {
   CardText,
   CardTitle,
   CardButton,
+  CardColorBox,
+  Checked,
 };

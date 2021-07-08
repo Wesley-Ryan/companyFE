@@ -16,7 +16,7 @@ const Cart: React.FC<Props> = ({ children }) => {
         background-color: #ffffff;
         box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.19);
         z-index: 99;
-        position: fixed;
+        position: absolute;
       `}
     >
       <Row>{children}</Row>

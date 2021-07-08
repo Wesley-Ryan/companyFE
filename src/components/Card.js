@@ -1,9 +1,21 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Column, CardText, CardTitle, CardButton } from "../styles/Styles";
-
+import {
+  Column,
+  CardText,
+  CardTitle,
+  CardButton,
+  CardColorBox,
+  Row,
+  Checked,
+} from "../styles/Styles";
+import Arrow from "../assets/arrow.svg";
 import Glasses from "../assets/glasses.jpg";
+import { useState } from "react";
 const Card = (props) => {
+  const colors = ["#143061", "#81396f", "#F6437D"];
+  const [inCart, setInCart] = useState(false);
+
   return (
     <div
       css={css`
@@ -28,6 +40,7 @@ const Card = (props) => {
               border-top-left-radius: 12px;
               border-top-right-radius: 12px;
             `}
+            alt="product"
           />
         </div>
         <Column>
@@ -36,6 +49,35 @@ const Card = (props) => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </CardText>
         </Column>
+        <Row
+          css={css`
+            margin: 51px 159.5px 0 21.5px;
+            justify-content: space-between;
+          `}
+        >
+          <CardColorBox
+            css={css`
+              background-color: ${colors[0]};
+            `}
+          >
+            {inCart && <Checked src={Arrow} alt="checked" />}
+          </CardColorBox>
+
+          <CardColorBox
+            css={css`
+              background-color: ${colors[1]};
+            `}
+          >
+            {inCart && <Checked src={Arrow} alt="checked" />}{" "}
+          </CardColorBox>
+          <CardColorBox
+            css={css`
+              background-color: ${colors[2]};
+            `}
+          >
+            {inCart && <Checked src={Arrow} alt="checked" />}
+          </CardColorBox>
+        </Row>
         <CardButton>Add to cart</CardButton>
       </Column>
     </div>
