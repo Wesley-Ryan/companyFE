@@ -4,8 +4,7 @@ import { NavItem, Row } from "../styles/Styles";
 import * as React from "react";
 import CartImg from "../assets/cart.svg";
 
-const Navigation = ({ items }) => {
-  console.log(items);
+const Navigation = ({ items, setIsOpen }) => {
   return (
     <div
       css={css`
@@ -48,7 +47,7 @@ const Navigation = ({ items }) => {
         <NavItem>VENIAM</NavItem>
       </ul>
 
-      <Row>
+      <Row onClick={() => setIsOpen((state) => !state)}>
         <img
           src={CartImg}
           alt="cart"

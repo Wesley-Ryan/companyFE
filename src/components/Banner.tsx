@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Row, Column, TopButton } from "../styles/Styles";
+import { Column, TopButton } from "../styles/Styles";
 import TopImg from "../assets/top-image.webp";
 const Banner = () => {
   return (
