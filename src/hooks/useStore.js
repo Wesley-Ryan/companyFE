@@ -3,7 +3,7 @@ import create from "zustand";
 export const useStore = create((set, get) => ({
   products: [],
   cart: [],
-  getProducts: (allProducts) => set({ products: allProducts }),
+  setProducts: (allProducts) => set({ products: allProducts }),
   addProduct: (product) => set({ products: [...get().products, product] }),
   removeProduct: (requestedProduct) => {
     const products = get().products;

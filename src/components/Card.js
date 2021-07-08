@@ -10,9 +10,12 @@ import {
   Checked,
 } from "../styles/Styles";
 import Arrow from "../assets/arrow.svg";
-import Glasses from "../assets/glasses.jpg";
+
 import { useState } from "react";
+
 const Card = (props) => {
+  const { product } = props;
+  console.log("CARD", product);
   const colors = ["#143061", "#81396f", "#F6437D"];
   const [inCart, setInCart] = useState(false);
 
@@ -33,7 +36,7 @@ const Card = (props) => {
       <Column>
         <div>
           <img
-            src={Glasses}
+            src={product?.url}
             css={css`
               height: 222px;
               width: 301px;
@@ -44,7 +47,7 @@ const Card = (props) => {
           />
         </div>
         <Column>
-          <CardTitle>Lorem ipsum 1</CardTitle>
+          <CardTitle>{product?.product_name}</CardTitle>
           <CardText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </CardText>
@@ -78,6 +81,7 @@ const Card = (props) => {
             {inCart && <Checked src={Arrow} alt="checked" />}
           </CardColorBox>
         </Row>
+        <p>ID: {product?.id}</p>
         <CardButton>Add to cart</CardButton>
       </Column>
     </div>

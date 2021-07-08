@@ -105,6 +105,9 @@ const Checked = styled.img`
   height: 20px;
   margin: 4px;
 `;
+const Bold = styled.span`
+  font-weigth: bold;
+`;
 
 export {
   Row,
@@ -118,4 +121,5 @@ export {
   CardButton,
   CardColorBox,
   Checked,
+  Bold,
 };

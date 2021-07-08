@@ -5,7 +5,6 @@ import * as React from "react";
 import CartImg from "../assets/cart.svg";
 
 const Navigation = ({ items, setIsOpen }) => {
-  console.log(items);
   return (
     <div
       css={css`
