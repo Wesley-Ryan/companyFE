@@ -4,8 +4,13 @@ import * as React from "react";
 import { useEffect } from "react";
 import { calculateTimeLeft } from "../hooks/useTimer";
 import { Row, Column, CountNumber, CountText } from "../styles/Styles";
+import Close from "../assets/close.svg";
 
-export const CountDownBanner = () => {
+type Props = {
+  setIsShowing: (value: boolean | ((prevVar: boolean) => boolean)) => void;
+};
+
+export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
   const [seconds, setSeconds] = React.useState<number>(0);
   const [minutes, setMinutes] = React.useState<number>(0);
   const [hours, setHours] = React.useState<number>(0);
@@ -78,6 +83,19 @@ export const CountDownBanner = () => {
             <CountText>seconds</CountText>
           </Column>
         </Row>
+
+        <Column
+          css={css`
+            align-self: center;
+            right: 0;
+            position: absolute;
+            margin-right: 31px;
+            cursor: pointer;
+          `}
+          onClick={() => setIsShowing((state) => !state)}
+        >
+          <img src={Close} alt="close-btn" height="15px" />
+        </Column>
       </Row>
     </div>
   );

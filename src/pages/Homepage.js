@@ -4,6 +4,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useStore } from "../hooks/useStore";
+import Resize from "../hooks/useResize";
 
 import { CountDownBanner } from "../components/CountDownBanner";
 import Navigation from "../components/Navigation.js";
@@ -23,29 +24,36 @@ import Logo from "../assets/FooterLogo.svg";
 
 function Homepage() {
   const { setProducts, products } = useStore((state) => state);
+  const [isShowing, setIsShowing] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items] = useState([]);
 
-  const getItems = () => {
-    axios
-      .get("https://ricoma.herokuapp.com/store/products/all")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
+  Resize();
+
   useEffect(() => {
+    const getItems = () => {
+      axios
+        .get("https://ricoma.herokuapp.com/store/products/all")
+        .then((response) => {
+          setProducts(response.data);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    };
     getItems();
-  }, []);
+  }, [setProducts]);
+
   return (
     <div
       css={css`
         width: 100%;
+        overflow-x: hidden;
       `}
     >
-      <CountDownBanner />
+      {window.innerWidth < 760
+        ? null
+        : isShowing && <CountDownBanner setIsShowing={setIsShowing} />}
       <Navigation items={items} setIsOpen={setIsOpen} />
 
       {isOpen && (
@@ -59,6 +67,7 @@ function Homepage() {
       )}
       <Banner />
       <CardContainer products={products} />
+
       <Footer>
         <FooterLogo src={Logo} alt="footer-logo" />
         <FooterColumn>

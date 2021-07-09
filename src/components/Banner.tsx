@@ -1,56 +1,77 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { Column, TopButton } from "../styles/Styles";
-import TopImg from "../assets/top-image.webp";
+import {
+  Column,
+  TopButton,
+  BannerContainer,
+  BannerTitle,
+  BannerText,
+} from "../styles/Styles";
+import TopImg from "../assets/top-image.jpg";
 const Banner = () => {
   return (
-    <div
+    <BannerContainer
       className="background"
       css={css`
-        height: 704px;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
+        @media (max-width: 820px) {
+          align-self: center;
+          justify-content: center;
+        }
       `}
     >
       <Column
         css={css`
           width: 603px;
+          @media (max-width: 720px) {
+            width: 100%;
+            padding: 8px;
+          }
         `}
       >
-        <h1
+        <BannerTitle
           css={css`
-            margin: 48px 0 37px 73px;
             width: 603px;
-            height: 356px;
-            color: #ffffff;
-            font-family: Poppins;
-            font-size: 80px;
-            font-weight: 600;
-            letter-spacing: 0;
-            line-height: 89px;
+            @media (max-width: 720px) {
+              width: 100%;
+              font-size: 40px;
+              line-height: 68px;
+              align-self: center;
+              margin-bottom: 0;
+            }
           `}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </h1>
-        <p
+        </BannerTitle>
+        <BannerText
           css={css`
-            width: 603px;
-            margin: 0 0 38px 79px;
-            height: 93px;
-            color: #ffffff;
-            font-family: "Open Sans";
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: 31px;
+            @media (max-width: 720px) {
+              width: 100%;
+              margin: 3px;
+              align-self: center;
+            }
           `}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
           aliquip ex ea commodo consequat
-        </p>
-        <TopButton>Lorem</TopButton>
+        </BannerText>
+        <TopButton
+          css={css`
+            @media (max-width: 840px) {
+              align-self: center;
+              margin: 0 auto;
+              margin-top: 50px;
+            }
+            @media (max-width: 440px) {
+              align-self: center;
+              margin: 0 auto;
+              margin-top: 95px;
+            }
+          `}
+        >
+          Lorem
+        </TopButton>
       </Column>
       <Column
         css={css`
@@ -60,9 +81,13 @@ const Banner = () => {
           background: url(${TopImg}) center center no-repeat;
           border-radius: 12px;
           box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+          @media (max-width: 840px) {
+            display:none;
+          }
+            }
         `}
       ></Column>
-    </div>
+    </BannerContainer>
   );
 };
 

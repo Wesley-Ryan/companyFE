@@ -25,7 +25,6 @@ const CardColorBox = ({
         {isBlueActive && <Checked src={Arrow} alt="checked" />}
         {isPinkActive && <Checked src={Arrow} alt="checked" />}
         {isPurpleActive && <Checked src={Arrow} alt="checked" />}
-        {console.log(isBlueActive)}
       </ColorBox>
     </>
   );

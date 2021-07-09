@@ -1,7 +1,11 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import { Carousel } from "react-responsive-carousel";
 import Card from "./Card";
 import { CarouselRow } from "../styles/Styles";
 import { useEffect, useState } from "react";
+import Resize from "../hooks/useResize";
 
 const CardContainer = (props) => {
   const [groupedProducts, setGroupedProducts] = useState([]);
@@ -12,17 +16,32 @@ const CardContainer = (props) => {
     for (let i = 0; i < data.length; i += n) result.push(data.slice(i, i + n));
     return result;
   };
+  Resize();
 
   useEffect(() => {
-    const grouped = groupOfThree(4, products);
-    setGroupedProducts(grouped);
+    if (window.innerWidth < 840) {
+      const grouped = groupOfThree(2, products);
+      setGroupedProducts(grouped);
+    } else {
+      const grouped = groupOfThree(4, products);
+      setGroupedProducts(grouped);
+    }
   }, [products]);
+
   return (
     <>
       <Carousel showThumbs={false}>
         {groupedProducts.map((prod, index) => {
           return (
-            <CarouselRow key={index}>
+            <CarouselRow
+              key={index}
+              css={css`
+                @media (max-width: 760px) {
+                  flex-direction: column;
+                  align-items: center;
+                }
+              `}
+            >
               {prod.map((eachProduct, idx) => {
                 return <Card product={eachProduct} key={idx} />;
               })}
