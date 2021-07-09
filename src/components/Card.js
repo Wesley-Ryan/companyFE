@@ -11,16 +11,6 @@ import {
 import CardColorBox from "./CardColorBox";
 import { useStore } from "../hooks/useStore";
 
-/*type ProductProps = {
-  id: number,
-  product_name: string,
-  color: string,
-  size: string,
-  price: number,
-  quantity: number,
-  company: number,
-};
-*/
 const Card = (props) => {
   const { product } = props;
   const {

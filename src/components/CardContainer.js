@@ -30,7 +30,7 @@ const CardContainer = (props) => {
 
   return (
     <>
-      <Carousel showThumbs={false}>
+      <Carousel showThumbs={false} autoPlay={true}>
         {groupedProducts.map((prod, index) => {
           return (
             <CarouselRow
