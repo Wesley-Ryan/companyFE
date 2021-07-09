@@ -23,6 +23,7 @@ import Logo from "../assets/FooterLogo.svg";
 
 function Homepage() {
   const { setProducts, products } = useStore((state) => state);
+  const [isShowing, setIsShowing] = useState(true);
   const [isOpen, setIsOpen] = useState(false);
   const [items] = useState([]);
 
@@ -45,7 +46,7 @@ function Homepage() {
         width: 100%;
       `}
     >
-      <CountDownBanner />
+      {isShowing && <CountDownBanner setIsShowing={setIsShowing} />}
       <Navigation items={items} setIsOpen={setIsOpen} />
 
       {isOpen && (
