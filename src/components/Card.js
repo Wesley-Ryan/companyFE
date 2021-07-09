@@ -48,8 +48,12 @@ const Card = (props) => {
             alt="product"
           />
         </div>
-        <Column>
-          <CardTitle>{product?.product_name}</CardTitle>
+        <Column
+          css={css`
+            text-align: left;
+          `}
+        >
+          <CardTitle>Lorem ipsum {product?.id}</CardTitle>
           <CardText>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </CardText>
@@ -72,7 +76,7 @@ const Card = (props) => {
             <CardColorBox isPinkActive={isPinkActive} color="#f6437d" />
           </span>
         </Row>
-        <p>ID: {product?.id}</p>
+
         <CardButton onClick={() => addToCart(product)}>Add to cart</CardButton>
       </Column>
     </CardContainer>

@@ -165,14 +165,14 @@ const CardContainer = styled.div`
 `;
 const CardTitle = styled.p`
   height: 33px;
-  width: 165px;
+  width: 100%;
   color: #000000;
   font-family: Poppins;
   font-size: 22px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 33px;
-  margin: 22px 115px 0 21.5px;
+  margin: 22px 115px 0 21px;
 `;
 const CardText = styled.p`
   margin: 7px 25px 0px 21px;
