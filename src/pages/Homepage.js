@@ -51,9 +51,7 @@ function Homepage() {
         overflow-x: hidden;
       `}
     >
-      {window.innerWidth < 760
-        ? null
-        : isShowing && <CountDownBanner setIsShowing={setIsShowing} />}
+      {isShowing && <CountDownBanner setIsShowing={setIsShowing} />}
       <Navigation items={items} setIsOpen={setIsOpen} />
 
       {isOpen && (
