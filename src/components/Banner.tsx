@@ -61,7 +61,12 @@ const Banner = () => {
             @media (max-width: 840px) {
               align-self: center;
               margin: 0 auto;
-              margin-top: 90px;
+              margin-top: 50px;
+            }
+            @media (max-width: 440px) {
+              align-self: center;
+              margin: 0 auto;
+              margin-top: 95px;
             }
           `}
         >

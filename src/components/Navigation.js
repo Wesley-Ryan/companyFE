@@ -4,39 +4,59 @@ import { NavContainer, NavItem, Row, NavLogo, NavMenu } from "../styles/Styles";
 import CartImg from "../assets/cart.svg";
 
 import { useStore } from "../hooks/useStore";
+import Resize from "../hooks/useResize";
 import { useHistory } from "react-router";
 const Navigation = ({ setIsOpen }) => {
   const history = useHistory();
   const cart = useStore((state) => state.cart);
+  Resize();
   return (
     <NavContainer>
       <NavLogo
         css={css`
-          @media (max-width: 770px) {
-            margin-right:50px
-            font-size: 18px;
+          @media (max-width: 835px) {
+            font-size: 20px;
+          }
+          @media (max-width: 440px) {
+            align-self: center;
+            width: 100%;
+            margin: 0 auto;
           }
         `}
       >
         Lorem Ipsum
       </NavLogo>
-
-      <NavMenu>
-        <NavItem>LOREM</NavItem>
-        <NavItem>IPSUM</NavItem>
-        <NavItem>EXCEPTEUR</NavItem>
-        <NavItem>CONSECTETUR</NavItem>
-        <NavItem
-          css={css`
-            &:hover {
-              text-decoration: underline;
-            }
-          `}
-          onClick={() => history.push("/login")}
-        >
-          LOGIN
-        </NavItem>
-      </NavMenu>
+      {window.innerWidth < 760 ? (
+        <NavMenu>
+          <NavItem
+            css={css`
+              &:hover {
+                text-decoration: underline;
+              }
+            `}
+            onClick={() => history.push("/login")}
+          >
+            LOGIN
+          </NavItem>
+        </NavMenu>
+      ) : (
+        <NavMenu>
+          <NavItem>LOREM</NavItem>
+          <NavItem>IPSUM</NavItem>
+          <NavItem>EXCEPTEUR</NavItem>
+          <NavItem>CONSECTETUR</NavItem>
+          <NavItem
+            css={css`
+              &:hover {
+                text-decoration: underline;
+              }
+            `}
+            onClick={() => history.push("/login")}
+          >
+            LOGIN
+          </NavItem>
+        </NavMenu>
+      )}
 
       <Row onClick={() => setIsOpen((state) => !state)}>
         <img
