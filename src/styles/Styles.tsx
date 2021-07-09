@@ -262,7 +262,7 @@ const CartLink = styled.button`
   border: none;
   text-decoration: underline;
   height: 24px;
-  width: 53px;
+  width: 60px;
   color: #646a70;
   font-family: "Open Sans";
   font-size: 13px;
