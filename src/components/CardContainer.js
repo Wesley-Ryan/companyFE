@@ -30,7 +30,6 @@ const CardContainer = (props) => {
           );
         })}
       </Carousel>
-      ;
     </>
   );
 };

@@ -22,6 +22,12 @@
   border-radius: 100%;
   background-color: #d74179;
 }
+.line {
+  height: 1px;
+  width: 266px;
+  border: 1px solid #979797;
+  opacity: 0.4;
+}
 
 .background {
   background: url(./assets/Group.png) no-repeat center center fixed;

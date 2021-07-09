@@ -1,51 +1,23 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { NavItem, Row } from "../styles/Styles";
-import * as React from "react";
+import { NavContainer, NavItem, Row, NavLogo, NavMenu } from "../styles/Styles";
 import CartImg from "../assets/cart.svg";
 
-const Navigation = ({ items, setIsOpen }) => {
-  return (
-    <div
-      css={css`
-        width: 100%;
-        height: 66px;
-        background-color: #ffffff;
-        font-family: Poppins;
-        display: flex;
-        justify-content: center;
-        border-bottom: 1px solid #e6e6e7;
-      `}
-    >
-      <h2
-        css={css`
-          height: 41px;
-          width: 159px;
-          color: #000000;
-          font-size: 24px;
-          font-weight: 600;
-          letter-spacing: 0;
-          line-height: 41px;
-          align-self: center;
-        `}
-      >
-        Lorem Ipsum
-      </h2>
+import { useStore } from "../hooks/useStore";
 
-      <ul
-        css={css`
-          display: flex;
-          justify-content: space-around;
-          width: 65%;
-          align-items: center;
-        `}
-      >
+const Navigation = ({ setIsOpen }) => {
+  const cart = useStore((state) => state.cart);
+  return (
+    <NavContainer>
+      <NavLogo>Lorem Ipsum</NavLogo>
+
+      <NavMenu>
         <NavItem>LOREM</NavItem>
         <NavItem>IPSUM</NavItem>
         <NavItem>EXCEPTEUR</NavItem>
         <NavItem>CONSECTETUR</NavItem>
         <NavItem>VENIAM</NavItem>
-      </ul>
+      </NavMenu>
 
       <Row onClick={() => setIsOpen((state) => !state)}>
         <img
@@ -59,7 +31,7 @@ const Navigation = ({ items, setIsOpen }) => {
             margin-right: -8px;
           `}
         />
-        {items.length > 0 ? (
+        {cart.length > 0 ? (
           <div
             className="oval"
             css={css`
@@ -74,7 +46,7 @@ const Navigation = ({ items, setIsOpen }) => {
                 font-size: 16px;
               `}
             >
-              {items}
+              {cart.length}
             </p>
           </div>
         ) : null}
@@ -89,7 +61,7 @@ const Navigation = ({ items, setIsOpen }) => {
           <p className="triangle"></p>
         </Row>
       </Row>
-    </div>
+    </NavContainer>
   );
 };
 

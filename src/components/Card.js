@@ -6,19 +6,23 @@ import {
   CardText,
   CardTitle,
   CardButton,
-  CardColorBox,
   Row,
-  Checked,
 } from "../styles/Styles";
-import Arrow from "../assets/arrow.svg";
+import { useStore } from "../hooks/useStore";
 
-import { useState } from "react";
-
+import CardColorBox from "./CardColorBox";
 const Card = (props) => {
+  const {
+    addToCart,
+    toggleBlueActive,
+    togglePurpleActive,
+    togglePinkActive,
+    isBlueActive,
+    isPurpleActive,
+    isPinkActive,
+  } = useStore((state) => state);
+
   const { product } = props;
-  console.log("CARD", product);
-  const colors = ["#143061", "#81396f", "#F6437D"];
-  const [inCart, setInCart] = useState(false);
 
   return (
     <CardContainer>
@@ -47,31 +51,20 @@ const Card = (props) => {
             justify-content: space-between;
           `}
         >
-          <CardColorBox
-            css={css`
-              background-color: ${colors[0]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}
-          </CardColorBox>
+          <span onClick={() => toggleBlueActive(!isBlueActive)}>
+            <CardColorBox isBlueActive={isBlueActive} color="#143061" />
+          </span>
 
-          <CardColorBox
-            css={css`
-              background-color: ${colors[1]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}{" "}
-          </CardColorBox>
-          <CardColorBox
-            css={css`
-              background-color: ${colors[2]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}
-          </CardColorBox>
+          <span onClick={() => togglePurpleActive(!isPurpleActive)}>
+            <CardColorBox isPurpleActive={isPurpleActive} color="#81396f" />
+          </span>
+
+          <span onClick={() => togglePinkActive(!isPinkActive)}>
+            <CardColorBox isPinkActive={isPinkActive} color="#f6437d" />
+          </span>
         </Row>
         <p>ID: {product?.id}</p>
-        <CardButton>Add to cart</CardButton>
+        <CardButton onClick={() => addToCart(product)}>Add to cart</CardButton>
       </Column>
     </CardContainer>
   );
