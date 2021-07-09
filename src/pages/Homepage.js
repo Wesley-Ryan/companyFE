@@ -24,21 +24,21 @@ import Logo from "../assets/FooterLogo.svg";
 function Homepage() {
   const { setProducts, products } = useStore((state) => state);
   const [isOpen, setIsOpen] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items] = useState([]);
 
-  const getItems = () => {
-    axios
-      .get("https://ricoma.herokuapp.com/store/products/all")
-      .then((response) => {
-        setProducts(response.data);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
   useEffect(() => {
+    const getItems = () => {
+      axios
+        .get("https://ricoma.herokuapp.com/store/products/all")
+        .then((response) => {
+          setProducts(response.data);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    };
     getItems();
-  }, []);
+  }, [setProducts]);
   return (
     <div
       css={css`
