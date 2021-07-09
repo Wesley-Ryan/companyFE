@@ -203,6 +203,49 @@ const CartLink = styled.button`
   cursor: pointer;
 `;
 
+const Footer = styled.footer`
+  height: 244px;
+  width: 1440px;
+  background-color: #000000;
+  margin-top: 78px;
+  padding: 2%;
+  display: flex;
+`;
+
+const FooterLogo = styled.img`
+  height: 146px;
+  width: 146px;
+  margin: 39px 142px 59px 114px;
+`;
+
+const FooterColumn = styled.div`
+  height: 132px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: 48px 70px 64px 0;
+`;
+
+const FooterTitle = styled.h3`
+  color: #f6437d;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 41px;
+  margin: 0;
+  padding: 0;
+`;
+const FooterText = styled.p`
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 31px;
+  margin: 0;
+`;
+
 export {
   Row,
   Column,
@@ -225,4 +268,9 @@ export {
   CartItemContainer,
   CartImg,
   CartLink,
+  Footer,
+  FooterLogo,
+  FooterColumn,
+  FooterTitle,
+  FooterText,
 };
