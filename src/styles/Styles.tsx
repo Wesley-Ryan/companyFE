@@ -134,12 +134,14 @@ const CardButton = styled.button`
   outline: none;
   position: absolute;
   bottom: 0;
+  cursor: pointer;
 `;
 
-const CardColorBox = styled.div`
+const ColorBox = styled.div`
   height: 32px;
   width: 33px;
   border-radius: 5px;
+  cursor: pointer;
 `;
 
 const Checked = styled.img`
@@ -214,7 +216,7 @@ export {
   CardText,
   CardTitle,
   CardButton,
-  CardColorBox,
+  ColorBox,
   Checked,
   CarouselRow,
   CartContainer,

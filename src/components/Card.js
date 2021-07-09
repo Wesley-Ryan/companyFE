@@ -6,21 +6,26 @@ import {
   CardText,
   CardTitle,
   CardButton,
-  CardColorBox,
   Row,
-  Checked,
 } from "../styles/Styles";
-import Arrow from "../assets/arrow.svg";
-
-import { useState } from "react";
 import { useStore } from "../hooks/useStore";
 
-const Card = (props) => {
-  const { addToCart } = useStore((state) => state);
-  const { product } = props;
+import BlueColorBox from "./BlueColorBox";
+import PurpleColorBox from "./PurpleColorBox";
+import PinkColorBox from "./PinkColorBox";
 
-  const colors = ["#143061", "#81396f", "#F6437D"];
-  const [inCart, setInCart] = useState(false);
+const Card = (props) => {
+  const {
+    addToCart,
+    toggleBlueActive,
+    togglePurpleActive,
+    togglePinkActive,
+    isBlueActive,
+    isPurpleActive,
+    isPinkActive,
+  } = useStore((state) => state);
+
+  const { product } = props;
 
   return (
     <CardContainer>
@@ -49,28 +54,17 @@ const Card = (props) => {
             justify-content: space-between;
           `}
         >
-          <CardColorBox
-            css={css`
-              background-color: ${colors[0]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}
-          </CardColorBox>
+          <span onClick={() => toggleBlueActive(!isBlueActive)}>
+            <BlueColorBox isBlueActive={isBlueActive} />
+          </span>
 
-          <CardColorBox
-            css={css`
-              background-color: ${colors[1]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}{" "}
-          </CardColorBox>
-          <CardColorBox
-            css={css`
-              background-color: ${colors[2]};
-            `}
-          >
-            {inCart && <Checked src={Arrow} alt="checked" />}
-          </CardColorBox>
+          <span onClick={() => togglePurpleActive(!isPurpleActive)}>
+            <PurpleColorBox isPurpleActive={isPurpleActive} />
+          </span>
+
+          <span onClick={() => togglePinkActive(!isPinkActive)}>
+            <PinkColorBox isPinkActive={isPinkActive} />
+          </span>
         </Row>
         <p>ID: {product?.id}</p>
         <CardButton onClick={() => addToCart(product)}>Add to cart</CardButton>

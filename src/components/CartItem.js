@@ -1,16 +1,25 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
+
 import {
   Column,
-  CardColorBox,
+  ColorBox,
   CartItemContainer,
   CartImg,
   CartProductText,
   CartLink,
+  Checked,
 } from "../styles/Styles";
+
+import { useStore } from "../hooks/useStore";
+import BlueColorBox from "./BlueColorBox";
+import PurpleColorBox from "./PurpleColorBox";
+import PinkColorBox from "./PinkColorBox";
+
 const CartItem = (props) => {
-  const colors = ["#143061", "#81396f", "#F6437D"];
   const { product, removeFromCart } = props;
+  const { togglePinkActive, isBlueActive, isPurpleActive, isPinkActive } =
+    useStore((state) => state);
   return (
     <CartItemContainer>
       <CartImg src={product.url} alt={product.product_name} />
@@ -27,24 +36,10 @@ const CartItem = (props) => {
             justify-content: space-around;
           `}
         >
-          <CardColorBox
-            css={css`
-              background-color: ${colors[0]};
-            `}
-          ></CardColorBox>
-
-          <CardColorBox
-            css={css`
-              background-color: ${colors[1]};
-            `}
-          ></CardColorBox>
-          <CardColorBox
-            css={css`
-              background-color: ${colors[2]};
-            `}
-          ></CardColorBox>
+          <BlueColorBox isBlueActive={isBlueActive} />
+          <PurpleColorBox isPurpleActive={isPurpleActive} />
+          <PinkColorBox isPinkActive={isPinkActive} />
         </div>
-
         <CartLink onClick={() => removeFromCart(product)}>REMOVE</CartLink>
       </Column>
     </CartItemContainer>
