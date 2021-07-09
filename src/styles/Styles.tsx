@@ -314,6 +314,20 @@ const FooterText = styled.p`
   line-height: 31px;
   margin: 0;
 `;
+const ProdContainer = styled.ul`
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+`;
+
+const ProdItem = styled.li`
+  list-style-type: none;
+  width: 15%;
+  margin: 5px;
+  text-align: center;
+`;
 
 export {
   Input,
@@ -349,4 +363,6 @@ export {
   FooterColumn,
   FooterTitle,
   FooterText,
+  ProdContainer,
+  ProdItem,
 };
