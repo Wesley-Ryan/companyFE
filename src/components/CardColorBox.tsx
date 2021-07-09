@@ -2,40 +2,30 @@
 import { css } from "@emotion/react";
 import { ColorBox, Checked } from "../styles/Styles";
 import Arrow from "../assets/arrow.svg";
-import { useState } from "react";
 
 interface ColorProps {
-  isOneActive: boolean;
-  isTwoActive: boolean;
-  isThreeActive: boolean;
+  isBlueActive: boolean;
+  isPurpleActive: boolean;
+  isPinkActive: boolean;
+  color: string;
 }
 const CardColorBox = ({
-  isOneActive,
-  isTwoActive,
-  isThreeActive,
+  color,
+  isBlueActive,
+  isPurpleActive,
+  isPinkActive,
 }: ColorProps) => {
   return (
     <>
       <ColorBox
         css={css`
-          background-color: #143061;
+          background-color: ${color};
         `}
       >
-        {isOneActive && <Checked src={Arrow} alt="checked" />}
-      </ColorBox>
-      <ColorBox
-        css={css`
-          background-color: #81396f;
-        `}
-      >
-        {isTwoActive && <Checked src={Arrow} alt="checked" />}
-      </ColorBox>
-      <ColorBox
-        css={css`
-          background-color: #f6437d;
-        `}
-      >
-        {isThreeActive && <Checked src={Arrow} alt="checked" />}
+        {isBlueActive && <Checked src={Arrow} alt="checked" />}
+        {isPinkActive && <Checked src={Arrow} alt="checked" />}
+        {isPurpleActive && <Checked src={Arrow} alt="checked" />}
+        {console.log(isBlueActive)}
       </ColorBox>
     </>
   );

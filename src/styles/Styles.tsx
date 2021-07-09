@@ -200,6 +200,7 @@ const CartLink = styled.button`
   letter-spacing: 0;
   line-height: 24px;
   background: none;
+  cursor: pointer;
 `;
 
 export {

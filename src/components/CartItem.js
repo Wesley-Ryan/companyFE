@@ -3,23 +3,20 @@ import { css } from "@emotion/react";
 
 import {
   Column,
-  ColorBox,
   CartItemContainer,
   CartImg,
   CartProductText,
   CartLink,
-  Checked,
 } from "../styles/Styles";
 
+import CardColorBox from "./CardColorBox";
 import { useStore } from "../hooks/useStore";
-import BlueColorBox from "./BlueColorBox";
-import PurpleColorBox from "./PurpleColorBox";
-import PinkColorBox from "./PinkColorBox";
 
 const CartItem = (props) => {
   const { product, removeFromCart } = props;
-  const { togglePinkActive, isBlueActive, isPurpleActive, isPinkActive } =
-    useStore((state) => state);
+  const { isBlueActive, isPurpleActive, isPinkActive } = useStore(
+    (state) => state
+  );
   return (
     <CartItemContainer>
       <CartImg src={product.url} alt={product.product_name} />
@@ -36,9 +33,9 @@ const CartItem = (props) => {
             justify-content: space-around;
           `}
         >
-          <BlueColorBox isBlueActive={isBlueActive} />
-          <PurpleColorBox isPurpleActive={isPurpleActive} />
-          <PinkColorBox isPinkActive={isPinkActive} />
+          <CardColorBox isBlueActive={isBlueActive} color="#143061" />
+          <CardColorBox isPurpleActive={isPurpleActive} color="#81396f" />
+          <CardColorBox isPinkActive={isPinkActive} color="#f6437d" />
         </div>
         <CartLink onClick={() => removeFromCart(product)}>REMOVE</CartLink>
       </Column>

@@ -10,10 +10,7 @@ import {
 } from "../styles/Styles";
 import { useStore } from "../hooks/useStore";
 
-import BlueColorBox from "./BlueColorBox";
-import PurpleColorBox from "./PurpleColorBox";
-import PinkColorBox from "./PinkColorBox";
-
+import CardColorBox from "./CardColorBox";
 const Card = (props) => {
   const {
     addToCart,
@@ -55,15 +52,15 @@ const Card = (props) => {
           `}
         >
           <span onClick={() => toggleBlueActive(!isBlueActive)}>
-            <BlueColorBox isBlueActive={isBlueActive} />
+            <CardColorBox isBlueActive={isBlueActive} color="#143061" />
           </span>
 
           <span onClick={() => togglePurpleActive(!isPurpleActive)}>
-            <PurpleColorBox isPurpleActive={isPurpleActive} />
+            <CardColorBox isPurpleActive={isPurpleActive} color="#81396f" />
           </span>
 
           <span onClick={() => togglePinkActive(!isPinkActive)}>
-            <PinkColorBox isPinkActive={isPinkActive} />
+            <CardColorBox isPinkActive={isPinkActive} color="#f6437d" />
           </span>
         </Row>
         <p>ID: {product?.id}</p>
