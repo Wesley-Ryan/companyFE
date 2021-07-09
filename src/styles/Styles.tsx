@@ -5,6 +5,44 @@ const CarouselRow = styled.div`
   display: flex;
   justify-content: space-around;
 `;
+const Input = styled.input`
+  height: 30px;
+  font-size: 16px;
+  width: 65%;
+  margin: 0 auto;
+  margin-top: 15px;
+`;
+const ErrorMessage = styled.p`
+  align-self: center;
+  font-family: Poppins;
+  margin: 0 auto;
+  color: rgb(207, 16, 32);
+`;
+const SubmitButton = styled.button`
+  min-width: 140px;
+  padding: 10px;
+  background-color: #000000;
+  font-family: Poppins;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-top: 8px;
+`;
+const ErrorButton = styled.button`
+  min-width: 140px;
+  font-family: Poppins;
+  padding: 10px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 16px;
+  border-radius: 4px;
+  outline: none;
+  border: none;
+  margin-top: 8px;
+`;
+
 const Row = styled.div`
   display: flex;
 `;
@@ -276,8 +314,26 @@ const FooterText = styled.p`
   line-height: 31px;
   margin: 0;
 `;
+const ProdContainer = styled.ul`
+  width: 100%;
+  border-bottom: 1px solid black;
+  display: flex;
+  margin: 0 auto;
+  padding: 0;
+`;
+
+const ProdItem = styled.li`
+  list-style-type: none;
+  width: 15%;
+  margin: 5px;
+  text-align: center;
+`;
 
 export {
+  Input,
+  ErrorMessage,
+  SubmitButton,
+  ErrorButton,
   Row,
   Column,
   BannerContainer,
@@ -307,4 +363,6 @@ export {
   FooterColumn,
   FooterTitle,
   FooterText,
+  ProdContainer,
+  ProdItem,
 };

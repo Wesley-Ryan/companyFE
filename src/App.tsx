@@ -4,7 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import Login from "./pages/Login";
 import Homepage from "./pages/Homepage.js";
 import NoMatch from "./pages/NoMatch";
-import Register from "./pages/Register";
+import CompanyItems from "./pages/CompanyItems";
 import "./App.css";
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
           <Route exact path="/login">
             <Login />
           </Route>
-          <Route exact path="/register">
-            <Register />
+          <Route exact path="/company/bnl">
+            <CompanyItems />
           </Route>
           <Route path="*">
             <NoMatch />
