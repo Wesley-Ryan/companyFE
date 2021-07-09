@@ -4,8 +4,9 @@ import { NavContainer, NavItem, Row, NavLogo, NavMenu } from "../styles/Styles";
 import CartImg from "../assets/cart.svg";
 
 import { useStore } from "../hooks/useStore";
-
+import { useHistory } from "react-router";
 const Navigation = ({ setIsOpen }) => {
+  const history = useHistory();
   const cart = useStore((state) => state.cart);
   return (
     <NavContainer>
@@ -16,7 +17,16 @@ const Navigation = ({ setIsOpen }) => {
         <NavItem>IPSUM</NavItem>
         <NavItem>EXCEPTEUR</NavItem>
         <NavItem>CONSECTETUR</NavItem>
-        <NavItem>VENIAM</NavItem>
+        <NavItem
+          css={css`
+            &:hover {
+              text-decoration: underline;
+            }
+          `}
+          onClick={() => history.push("/login")}
+        >
+          COMPANY LOGIN
+        </NavItem>
       </NavMenu>
 
       <Row onClick={() => setIsOpen((state) => !state)}>

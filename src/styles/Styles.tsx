@@ -67,6 +67,7 @@ const NavItem = styled.li`
   line-height: 31px;
   text-align: center;
   list-style-type: none;
+  cursor: pointer;
 `;
 
 const TopButton = styled.button`
