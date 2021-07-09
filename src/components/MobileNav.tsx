@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import { css } from "@emotion/react";
-import { NavContainer, NavItem, Row, NavLogo, NavMenu } from "../styles/Styles";
+import { NavItem } from "../styles/Styles";
 import Menu from "../assets/menu.svg";
 import { useHistory } from "react-router";
 import { useState } from "react";
@@ -19,7 +19,7 @@ function MobileNav() {
         `}
         onClick={() => setIsOpen((state) => !state)}
       >
-        <img src={Menu} height="80px" />
+        <img src={Menu} height="80px" alt="mobile-menu" />
       </div>
       {isOpen && (
         <div
