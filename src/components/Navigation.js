@@ -10,7 +10,16 @@ const Navigation = ({ setIsOpen }) => {
   const cart = useStore((state) => state.cart);
   return (
     <NavContainer>
-      <NavLogo>Lorem Ipsum</NavLogo>
+      <NavLogo
+        css={css`
+          @media (max-width: 770px) {
+            margin-right:50px
+            font-size: 18px;
+          }
+        `}
+      >
+        Lorem Ipsum
+      </NavLogo>
 
       <NavMenu>
         <NavItem>LOREM</NavItem>
@@ -25,7 +34,7 @@ const Navigation = ({ setIsOpen }) => {
           `}
           onClick={() => history.push("/login")}
         >
-          COMPANY LOGIN
+          LOGIN
         </NavItem>
       </NavMenu>
 
@@ -39,6 +48,11 @@ const Navigation = ({ setIsOpen }) => {
             align-self: center;
             margin-left: 100px;
             margin-right: -8px;
+
+            @media (max-width: 770px) {
+              align-self: center;
+              margin-left: 0;
+            }
           `}
         />
         {cart.length > 0 ? (
