@@ -1,3 +1,6 @@
+/** @jsxImportSource @emotion/react */
+import { css } from "@emotion/react";
+
 import { Carousel } from "react-responsive-carousel";
 import Card from "./Card";
 import { CarouselRow } from "../styles/Styles";
@@ -22,7 +25,15 @@ const CardContainer = (props) => {
       <Carousel showThumbs={false}>
         {groupedProducts.map((prod, index) => {
           return (
-            <CarouselRow key={index}>
+            <CarouselRow
+              key={index}
+              css={css`
+                @media (max-width: 820px) {
+                  flex-direction: column;
+                  align-items: center;
+                }
+              `}
+            >
               {prod.map((eachProduct, idx) => {
                 return <Card product={eachProduct} key={idx} />;
               })}

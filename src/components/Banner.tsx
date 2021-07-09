@@ -60,6 +60,8 @@ const Banner = () => {
           background: url(${TopImg}) center center no-repeat;
           border-radius: 12px;
           box-shadow: 0 4px 7px rgba(0, 0, 0, 0.5);
+          
+            }
         `}
       ></Column>
     </div>

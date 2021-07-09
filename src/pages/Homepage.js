@@ -44,6 +44,7 @@ function Homepage() {
     <div
       css={css`
         width: 100%;
+        overflow-x: hidden;
       `}
     >
       {isShowing && <CountDownBanner setIsShowing={setIsShowing} />}
