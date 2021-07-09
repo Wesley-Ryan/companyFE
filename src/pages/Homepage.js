@@ -67,6 +67,7 @@ function Homepage() {
       )}
       <Banner />
       <CardContainer products={products} />
+
       <Footer>
         <FooterLogo src={Logo} alt="footer-logo" />
         <FooterColumn>
