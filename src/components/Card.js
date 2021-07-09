@@ -8,10 +8,21 @@ import {
   CardButton,
   Row,
 } from "../styles/Styles";
+import CardColorBox from "./CardColorBox";
 import { useStore } from "../hooks/useStore";
 
-import CardColorBox from "./CardColorBox";
+/*type ProductProps = {
+  id: number,
+  product_name: string,
+  color: string,
+  size: string,
+  price: number,
+  quantity: number,
+  company: number,
+};
+*/
 const Card = (props) => {
+  const { product } = props;
   const {
     addToCart,
     toggleBlueActive,
@@ -21,8 +32,6 @@ const Card = (props) => {
     isPurpleActive,
     isPinkActive,
   } = useStore((state) => state);
-
-  const { product } = props;
 
   return (
     <CardContainer>
