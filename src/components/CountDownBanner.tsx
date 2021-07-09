@@ -53,6 +53,9 @@ export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
             font-size: 16px;
             letter-spacing: 0;
             line-height: 31px;
+            @media (max-width: 740px) {
+              display: none;
+            }
           `}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
@@ -63,6 +66,9 @@ export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
             width: 211px;
             height: 44px;
             align-items: center;
+            @media (max-width: 740px) {
+              margin: 0 auto;
+            }
           `}
         >
           <Column>
