@@ -12,6 +12,36 @@ const Column = styled.div`
   display: flex;
   flex-direction: column;
 `;
+
+const BannerContainer = styled.div`
+  height: 704px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
+
+const BannerTitle = styled.p`
+  margin: 48px 0 37px 73px;
+  width: 603px;
+  height: 356px;
+  color: #ffffff;
+  font-family: Poppins;
+  font-size: 80px;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 89px;
+`;
+
+const BannerText = styled.p`
+  width: 603px;
+  margin: 0 0 38px 79px;
+  height: 93px;
+  color: #ffffff;
+  font-family: "Open Sans";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 31px;
+`;
 const CountText = styled.p`
   color: rgba(255, 255, 255, 0.72);
   font-family: Poppins;
@@ -250,6 +280,9 @@ const FooterText = styled.p`
 export {
   Row,
   Column,
+  BannerContainer,
+  BannerTitle,
+  BannerText,
   CountText,
   CountNumber,
   NavContainer,
