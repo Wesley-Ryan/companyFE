@@ -329,6 +329,24 @@ const ProdItem = styled.li`
   text-align: center;
 `;
 
+const CountContainer = styled.div`
+  width: 100%;
+  height: 50px;
+  background-color: #1f3162;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const CounterTitleText = styled.p`
+  lign-self: center;
+  height: 31px;
+  color: rgba(255, 255, 255, 0.72);
+  font-family: Poppins;
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 31px;
+`;
+
 export {
   Input,
   ErrorMessage,
@@ -351,6 +369,8 @@ export {
   CardTitle,
   CardButton,
   ColorBox,
+  CountContainer,
+  CounterTitleText,
   Checked,
   CarouselRow,
   CartContainer,

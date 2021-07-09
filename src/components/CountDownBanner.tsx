@@ -3,7 +3,14 @@ import { css } from "@emotion/react";
 import * as React from "react";
 import { useEffect } from "react";
 import { calculateTimeLeft } from "../hooks/useTimer";
-import { Row, Column, CountNumber, CountText } from "../styles/Styles";
+import {
+  Row,
+  Column,
+  CountNumber,
+  CountText,
+  CountContainer,
+  CounterTitleText,
+} from "../styles/Styles";
 import Close from "../assets/close.svg";
 
 type Props = {
@@ -27,16 +34,7 @@ export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
     }
   }, [seconds]);
   return (
-    <div
-      css={css`
-        width: 100%;
-        height: 50px;
-        background-color: #1f3162;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      `}
-    >
+    <CountContainer>
       <Row
         css={css`
           height: 44px;
@@ -44,22 +42,15 @@ export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
           justify-content: space-between;
         `}
       >
-        <p
+        <CounterTitleText
           css={css`
-            align-self: center;
-            height: 31px;
-            color: rgba(255, 255, 255, 0.72);
-            font-family: Poppins;
-            font-size: 16px;
-            letter-spacing: 0;
-            line-height: 31px;
-            @media (max-width: 740px) {
+            a @media (max-width: 740px) {
               display: none;
             }
           `}
         >
           Lorem ipsum dolor sit amet, consectetur adipiscing elit
-        </p>
+        </CounterTitleText>
 
         <Row
           css={css`
@@ -103,6 +94,6 @@ export const CountDownBanner: React.FC<Props> = ({ setIsShowing }) => {
           <img src={Close} alt="close-btn" height="15px" />
         </Column>
       </Row>
-    </div>
+    </CountContainer>
   );
 };
